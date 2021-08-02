@@ -448,7 +448,7 @@ function obsidianmese.register_capitator()
 			"ethereal:banana_trunk",
 			"ethereal:frost_tree",
 			"ethereal:palm_trunk",
-			"ethereal:redwood_trunk",
+--			"ethereal:redwood_trunk",
 			"ethereal:birch_trunk",
 			"ethereal:sakura_trunk",
 			"ethereal:olive_trunk",
