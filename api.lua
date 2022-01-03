@@ -434,29 +434,134 @@ function obsidianmese.dig_up(pos, node, digger)
 	end
 end
 
-function obsidianmese.register_capitator()
-	local trees = {
-		"default:tree",
-		"default:jungletree",
-		"default:pine_tree",
-		"default:acacia_tree",
-		"default:aspen_tree",
-		
-		if minetest.get_modpath("ethereal") then
-			"ethereal:willow_trunk",
-			"ethereal:yellow_trunk",
-			"ethereal:banana_trunk",
-			"ethereal:frost_tree",
-			"ethereal:palm_trunk",
---			"ethereal:redwood_trunk",
-			"ethereal:birch_trunk",
-			"ethereal:sakura_trunk",
-			"ethereal:olive_trunk",
-			"ethereal:mushroom_trunk",
-		end
-		
-	}
+local trees = {
+    "default:tree",
+    "default:jungletree",
+    "default:pine_tree",
+    "default:acacia_tree",
+    "default:aspen_tree",
+    "default:cactus",
+ }
 
+function obsidianmese:add_tree(list)
+	for n = 1, #list do
+		trees[#trees + 1] = list[n]
+	end
+end
+
+if minetest.get_modpath("ethereal") ~= nil then
+	obsidianmese:add_tree({
+        "ethereal:mushroom_trunk",
+        "ethereal:banana_trunk",
+        "ethereal:birch_trunk",
+        "ethereal:frost_tree",
+        "ethereal:olive_trunk",
+        "ethereal:palm_trunk",
+        "ethereal:redwood_trunk",
+        "ethereal:sakura_trunk",
+        "ethereal:scorched_tree",
+        "ethereal:willow_trunk",
+        "ethereal:yellow_trunk",
+	})
+end
+
+if minetest.get_modpath("date_palm") ~= nil then
+	obsidianmese:add_tree({
+		"date_palm:trunk",
+	})
+end
+
+if minetest.get_modpath("rubber_tree") ~= nil then
+	obsidianmese:add_tree({
+		"rubber_tree:rubber_tree_trunk",
+	})
+end
+
+if minetest.get_modpath("baldcypress") ~= nil then
+	obsidianmese:add_tree({
+		"baldcypress:trunk",
+	})
+end
+
+if minetest.get_modpath("cherrytree") ~= nil then
+	obsidianmese:add_tree({
+		"cherrytree:trunk",
+	})
+end
+
+if minetest.get_modpath("chestnuttree") ~= nil then
+	obsidianmese:add_tree({
+		"chestnuttree:trunk",
+	})
+end
+
+if minetest.get_modpath("clementinetree") ~= nil then
+	obsidianmese:add_tree({
+		"clementinetree:trunk",
+	})
+end    
+
+if minetest.get_modpath("ebony") ~= nil then
+	obsidianmese:add_tree({
+		"ebony:trunk",
+	})
+end        
+
+if minetest.get_modpath("hollytree") ~= nil then
+	obsidianmese:add_tree({
+		"hollytree:trunk",
+	})
+end          
+
+if minetest.get_modpath("jacaranda") ~= nil then
+	obsidianmese:add_tree({
+		"jacaranda:trunk",
+	})
+end          
+    
+if minetest.get_modpath("larch") ~= nil then
+	obsidianmese:add_tree({
+		"larch:trunk",
+	})
+end  
+    
+if minetest.get_modpath("mahogany") ~= nil then
+	obsidianmese:add_tree({
+		"mahogany:trunk",
+	})
+end
+
+if minetest.get_modpath("maple") ~= nil then
+	obsidianmese:add_tree({
+		"maple:trunk",
+	})
+end            
+
+if minetest.get_modpath("oak") ~= nil then
+	obsidianmese:add_tree({
+		"oak:trunk",
+	})
+end            
+        
+if minetest.get_modpath("plumtree") ~= nil then
+	obsidianmese:add_tree({
+		"plumtree:trunk",
+	})
+end       
+    
+if minetest.get_modpath("pomegranate") ~= nil then
+	obsidianmese:add_tree({
+		"pomegranate:trunk",
+	})
+end  
+
+if minetest.get_modpath("sequoia") ~= nil then
+	obsidianmese:add_tree({
+		"sequoia:trunk",
+	})
+end      
+
+function obsidianmese.register_capitator()
 	for i = 1, #trees do
 		local ndef = minetest.registered_nodes[trees[i]]
 		local prev_after_dig = ndef.after_dig_node
