@@ -231,6 +231,7 @@ minetest.register_tool("obsidianmese:sword_engraved", {
 	description = "Obsidian Mese Sword Engraved - right click shoot 1 shot",
 	inventory_image = "obsidianmese_sword_diamond_engraved.png",
 	wield_scale = {x=1.5, y=2, z=1},
+    groups = {not_in_creative_inventory=1},
 	tool_capabilities = {
 		full_punch_interval = 0.6,
 		max_drop_level=1,
